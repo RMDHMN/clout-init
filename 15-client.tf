@@ -39,7 +39,7 @@ resource "aws_instance" "client" {
   ami           = data.aws_ami.ubuntu_jammy.id
   key_name      = "devops"
   instance_type = "t3.large"
-  subnet_id     = aws_subnet.public_eu_west_3a.id
+  subnet_id     = aws_subnet.public_eu-west-3a.id
 
   vpc_security_group_ids = [
     aws_security_group.client.id

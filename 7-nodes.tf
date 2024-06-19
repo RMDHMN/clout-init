@@ -41,7 +41,7 @@ resource "aws_eks_node_group" "private_nodes" {
 
   # Single subnet to avoid data transfer charges while testing.
   subnet_ids = [
-    aws_subnet.private_eu_west_3a.id
+    aws_subnet.private_eu-west-3a.id
   ]
 
   capacity_type  = "ON_DEMAND"
@@ -49,7 +49,7 @@ resource "aws_eks_node_group" "private_nodes" {
 
   scaling_config {
     desired_size = 1
-    max_size     = 2
+    max_size     = 5
     min_size     = 0
   }
 
@@ -75,7 +75,7 @@ resource "aws_eks_node_group" "ingress_nodes" {
 
   # Single subnet to avoid data transfer charges while testing.
   subnet_ids = [
-    aws_subnet.private_eu_west_3a.id
+    aws_subnet.private_eu-west-3a.id
   ]
 
   capacity_type  = "ON_DEMAND"
